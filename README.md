@@ -2,6 +2,9 @@
 
 This project aims to create a movie recommendation system using movie data on TMDb (The Movie Database). The project was developed using the Python programming language and scikit-learn library.
 
+# Note
+Since it is a school project, it is available in print vb so that it can be better understood and my steps can be displayed step by step.
+
 ## Used technologies
 
 - **Python**: The project is written in the Python programming language.
