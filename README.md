@@ -24,6 +24,7 @@ Since it is a school project, it is available in print vb so that it can be bett
 1. If Python is not installed, [From Python's official website](https://www.python.org/downloads/) Download and install Python.
 2. Enter these commands in the terminal or command prompt to install the required libraries:
     ```bash
+    python3 -m pip install pandas
     python3 -m pip install scikit-learn
     ```
 4. Run the program by entering the following command in the terminal or command prompt in the project directory:
