@@ -1,6 +1,8 @@
 import pandas as pd
 from sklearn.feature_extraction.text import TfidfVectorizer
 from sklearn.metrics.pairwise import linear_kernel
+import matplotlib.pyplot as plt
+import seaborn as sns
 
 data_credits = pd.read_csv('tmdb_5000_credits.csv')
 data_movies = pd.read_csv('tmdb_5000_movies.csv')
@@ -56,3 +58,14 @@ def get_recommendations(title, cosine_similarity=cosine_similarity):
     return data_all['original_title'].iloc[movie_indices]
 input_movie = input("Enter movie name: ")
 print(get_recommendations(input_movie))
+
+recommendations = get_recommendations(input_movie)
+
+plt.figure(figsize=(16, 5))
+ax = sns.barplot(x=recommendations, y=[cosine_similarity[indices[input_movie]][indices[rec]] for rec in recommendations], color='skyblue')
+plt.title('The 10 most similar movies to {}'.format(input_movie), weight='bold')
+plt.xlabel('Movie Title', weight='bold')
+plt.ylabel('Cosine Similarity Score', weight='bold')
+plt.xticks(rotation=45, ha='right')
+plt.tight_layout()
+plt.show()
